@@ -93,6 +93,12 @@ public class UserDashboardController {
             String author = libraryTable.getSelectionModel().getSelectedItem().getAuthor();
             int copy = libraryTable.getSelectionModel().getSelectedItem().getAvailable();
 
+            ObservableList<BookDisplay> myBooksData = myBookTable.getItems();
+            if (myBooksData.size() >= 5) {  // Kiểm tra nếu số lượng sách mượn vượt quá 5
+                showAlert("Đã quá giới hạn mượn sách (tối đa 5 quyển).");
+                return;
+            }
+
             if (copy == 0) {
                 Alert noti = new Alert(Alert.AlertType.WARNING);
                 noti.setTitle("Warning");
@@ -227,5 +233,14 @@ public class UserDashboardController {
 
         // TODO: Thực hiện logic mượn sách từ tab "Search"
         // Ví dụ: Lấy sách đã chọn trong `searchTable` và thêm vào danh sách "sách đã mượn"
+    }
+
+    private static void showAlert(String message) {
+        // Tạo một hộp thoại thông báo
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Borrow Limit Exceeded");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait(); // Hiển thị thông báo và đợi người dùng đóng
     }
 }

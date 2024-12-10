@@ -7,7 +7,7 @@ public class DBConnection {
 
     private static final String URL = "jdbc:mysql://localhost:3306/library"; // Địa chỉ và tên cơ sở dữ liệu
     private static final String USER = "root"; // Tên người dùng MySQL
-    private static final String PASSWORD = "00802005"; // Mật khẩu MySQL của bạn
+    private static final String PASSWORD = "Huycube123!"; // Mật khẩu MySQL của bạn
 
     // Lấy kết nối tới cơ sở dữ liệu
     public static Connection getConnection(){

@@ -33,22 +33,33 @@ public class BookQuery {
     }
 
     public static ObservableList<BookDisplay> getAllBookByName(String name) {
-
         ObservableList<BookDisplay> result = FXCollections.observableArrayList();
-        String sql = "SELECT * FROM Documents WHERE title LIKE ?";
+        String sql = """
+        SELECT 
+            d.DocumentId AS bookID,
+            d.title,
+            d.author,
+            d.quantity AS available,
+            ROUND(IFNULL(AVG(r.rating), 0), 1) AS averageRating
+        FROM Documents d
+        LEFT JOIN Reviews r ON d.DocumentId = r.documentId
+        WHERE d.title LIKE ?
+        GROUP BY d.DocumentId, d.title, d.author, d.quantity
+        ORDER BY d.DocumentId;
+    """;
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = Objects.requireNonNull(con).prepareStatement(sql)) {
-            ResultSet rs = null;
             ps.setString(1, "%" + name + "%");
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                result.add(new BookDisplay(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        5,
-                        rs.getInt(5)
-                ));
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    int bookID = rs.getInt("bookID");
+                    String title = rs.getString("title");
+                    String author = rs.getString("author");
+                    int available = rs.getInt("available");
+                    double averageRating = rs.getDouble("averageRating");
+
+                    result.add(new BookDisplay(bookID, title, author, averageRating, available));
+                }
             }
         } catch (SQLException e) {
             System.out.println("Error while getting books info: " + e.getMessage());
