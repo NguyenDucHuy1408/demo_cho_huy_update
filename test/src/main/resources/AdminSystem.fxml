@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="outer" stylesheets="@AdminDashboard.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFx.AdminDashboardController">
+   <children>
+      <AnchorPane prefHeight="580.0" prefWidth="961.0" styleClass="inner">
+         <children>
+            <AnchorPane layoutX="89.0" layoutY="130.0" prefHeight="200.0" prefWidth="203.0" styleClass="info-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="56.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Users.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="41.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Admin">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="358.0" layoutY="168.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="202.3" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TabPane layoutX="138.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Books">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="bookTable" layoutX="84.0" layoutY="58.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="78.33331298828125" text="Book ID" />
+                                        <TableColumn prefWidth="202.0" text="Title" />
+                                          <TableColumn prefWidth="157.0" text="Author" />
+                                          <TableColumn minWidth="0.0" prefWidth="61.000030517578125" text="Rating" />
+                                          <TableColumn prefWidth="77.0" text="Available" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="addBook" layoutX="317.0" layoutY="480.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Add" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="185.0" />
+                                    <Button fx:id="removeBook" layoutX="483.0" layoutY="479.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Remove" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="25.0" />
+                                    <Button fx:id="editBook" layoutX="399.0" layoutY="479.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Edit" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="105.0" />
+                                    <StackPane fx:id="addBookPane" layoutX="6.0" layoutY="168.0" prefHeight="150.0" prefWidth="566.0" styleClass="edit-pane" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="180.0">
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="addTitle" layoutX="10.0" layoutY="63.0" promptText="Title" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="63.0" />
+                                                <TextField fx:id="addCopy" layoutX="389.0" layoutY="63.0" promptText="Available" />
+                                                <TextField fx:id="addAuthor" layoutX="202.0" layoutY="63.0" promptText="Author" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="63.0" />
+                                                <Button fx:id="submitAdd" layoutX="251.0" layoutY="105.0" mnemonicParsing="false" text="Submit" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Users">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="userTable" layoutX="111.0" layoutY="82.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="96.33331298828125" text="User ID" />
+                                        <TableColumn prefWidth="176.0" text="Username" />
+                                          <TableColumn prefWidth="175.0" text="Password" />
+                                          <TableColumn prefWidth="128.0" text="Role" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="removeUser" layoutX="456.0" layoutY="486.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Remove" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="25.0" />
+                                    <Button fx:id="editUser" layoutX="368.0" layoutY="483.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Edit" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="105.0" />
+                                    <Button fx:id="addUser" layoutX="293.0" layoutY="500.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Add" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="185.0" />
+                                    <StackPane fx:id="addUserPane" layoutX="16.0" layoutY="178.0" prefHeight="150.0" prefWidth="566.0" styleClass="edit-pane" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="addUsername" layoutX="10.0" layoutY="63.0" promptText="Username" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="63.0" />
+                                                <TextField fx:id="addRole" layoutX="389.0" layoutY="63.0" promptText="Role" />
+                                                <TextField fx:id="addPassword" layoutX="202.0" layoutY="63.0" promptText="Password" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="63.0" />
+                                                <Button fx:id="submitUser" layoutX="251.0" layoutY="105.0" mnemonicParsing="false" text="Submit" />
+                                                <TextField fx:id="addID" layoutX="202.0" layoutY="19.0" promptText="ID" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Borrow">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="borrowTable" layoutX="93.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="56.33331298828125" text="ID" />
+                                        <TableColumn prefWidth="74.66665649414062" text="User ID" />
+                                          <TableColumn prefWidth="77.66668701171875" text="Book ID" />
+                                          <TableColumn prefWidth="133.6666259765625" text="Borrow Date" />
+                                          <TableColumn minWidth="0.0" prefWidth="121.3333740234375" text="Due Date" />
+                                          <TableColumn prefWidth="110.0" text="Returned?" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="borrowRefresh" layoutX="484.0" layoutY="489.0" mnemonicParsing="false" text="Refresh" />
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

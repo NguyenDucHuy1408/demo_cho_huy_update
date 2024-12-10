@@ -1,0 +1,37 @@
+.user-pane {
+    -fx-border-color:  #E195AB;
+    -fx-border-width: 0px 5px 0px 0px;
+}
+
+/* Định dạng mặc định cho button */
+.button {
+    -fx-background-color: #B1F0F7; /* Màu nền */
+    -fx-border-width: 1px; /* Độ dày viền */
+    -fx-border-color: #2A3335; /* Màu viền */
+    -fx-border-radius: 8px; /* Góc bo viền */
+    -fx-background-radius: 8px; /* Góc bo nền */
+    -fx-text-fill: #2A3335; /* Màu chữ */
+    -fx-font-size: 12px; /* Kích thước chữ */
+    -fx-cursor: hand; /* Đổi con trỏ chuột thành hình bàn tay */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0.2, 2, 2); /* Bóng */
+}
+
+/* Hiệu ứng hover */
+.button:hover {
+    -fx-background-color: #A0E4F0; /* Màu nền khi hover */
+    -fx-border-color: #1D2627; /* Màu viền khi hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0.3, 3, 3); /* Tăng bóng */
+}
+
+/* Hiệu ứng khi nhấn (click) */
+.button:pressed {
+    -fx-background-color: #90D8E4; /* Màu nền khi click */
+    -fx-border-color: #1B2324; /* Màu viền khi click */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.1, 1, 1); /* Giảm bóng */
+    -fx-translate-y: 2px; /* Nhấn nút xuống dưới 2px */
+}
+
+.username-text {
+    -fx-text-alignment: center;
+    -fx-alignment: center; /* Căn giữa cả theo chiều ngang và dọc */
+}

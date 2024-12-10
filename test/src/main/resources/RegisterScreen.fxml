@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="428" prefWidth="595" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFx.RegisterScreen">
+  <children>
+    <ImageView fitHeight="428" fitWidth="595" layoutX="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@LoginScreen.png" />
+      </image>
+    </ImageView>
+    <Pane layoutX="134.0" layoutY="49.0" prefHeight="329.0" prefWidth="327.0">
+      <children>
+        <Button id="username" fx:id="loginButton" layoutX="22.0" layoutY="268.0" minHeight="26.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="35.0" prefWidth="128.0" text="login" />
+        <Button fx:id="registerButton" layoutX="182.0" layoutY="268.0" minHeight="29.0" mnemonicParsing="false" onAction="#handleRegister" prefHeight="35.0" prefWidth="128.0" text="register" />
+        <TextField fx:id="usernameField" layoutX="48.0" layoutY="14.0" prefHeight="49.0" prefWidth="232.0" promptText="user name" text="" />
+        <PasswordField fx:id="passwordField" layoutX="48.0" layoutY="153.0" prefHeight="49.0" prefWidth="232.0" promptText="password" text="" />
+        <TextField id="passwordField" fx:id="idField" layoutX="48.0" layoutY="82.0" prefHeight="49.0" prefWidth="232.0" promptText="ID" />
+        <CheckBox fx:id="adminCheckBox" layoutX="48.0" layoutY="223.0" mnemonicParsing="false" text="Admin" />
+        <CheckBox fx:id="memberCheckBox" layoutX="212.0" layoutY="223.0" mnemonicParsing="false" text="Member" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

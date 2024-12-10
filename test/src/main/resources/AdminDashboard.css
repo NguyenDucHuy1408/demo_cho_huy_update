@@ -1,0 +1,39 @@
+.outer {
+    -fx-background-color: #81BFDA;
+    -fx-padding: 10px;
+}
+
+.inner {
+    -fx-background-color: #B1F0F7;
+    -fx-background-radius: 5px;
+}
+
+.info-pane {
+    -fx-border-width: 0px 2px 0px 0px;
+    -fx-border-color: #81BFDA;
+}
+
+.button {
+    -fx-border-radius: 5px;
+    -fx-border-color: #FADA7A;
+    -fx-border-width: 1px;
+    -fx-background-color: #F5F0CD;
+    -fx-background-radius: 5px;
+    -fx-effeft: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.3, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #FFE599;
+    -fx-border-color: #FFD966;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 0, 4);
+}
+
+.button:pressed {
+    -fx-background-color: #F4C542;
+    -fx-border-color: #F0A500;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.2, 0, 1);
+}
+
+.edit-pane {
+    -fx-background-color: #F2F9FF;
+}
